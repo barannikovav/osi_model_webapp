@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<html lang="ru">
+<head>
+    <title>Модель OSI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- load static -->
+    {% load static %}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="w3-container w3-theme w3-padding" id="myHeader">
+        <div class="w3-left">
+            <img style="vertical-align: top" src="{% static 'osi_model/internet.png' %}" alt="Проект для изучения сетевой модели OSI" width="32" height="32"/>
+            <a style="font-size:20px; text-decoration: none;" href="{% url 'index' %}">&nbsp Проект для изучения сетевой модели OSI</a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <!-- <footer class="w3-container w3-theme-dark w3-padding-16">
+        Andrey Barannikov © 2025
+        <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+            <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+            <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+            <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+    </footer> -->
+
+</body>
+</html>
