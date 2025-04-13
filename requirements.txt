@@ -1,0 +1,16 @@
+asgiref==3.8.1
+astroid==3.3.9
+dill==0.3.9
+Django==5.2
+isort==6.0.1
+mccabe==0.7.0
+platformdirs==4.3.7
+pylint==3.3.6
+pylint-django==2.6.1
+pylint-plugin-utils==0.8.2
+PyYAML==6.0
+setuptools @ file:///usr/local/Cellar/python%403.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ensurepip/_bundled/setuptools-65.6.3-py3-none-any.whl
+six==1.16.0
+sqlparse==0.5.3
+tomlkit==0.13.2
+wheel @ file:///usr/local/Cellar/python%403.9/3.9.16/libexec/wheel-0.38.4-py3-none-any.whl
