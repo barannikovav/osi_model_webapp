@@ -22,5 +22,6 @@ urlpatterns = [
     # ex: /
     path("", views.index, name="index"),
     path("layers/", include("layers.urls")),
+    path("reviews/", include("reviews.urls")),
     path('admin/', admin.site.urls),
 ]

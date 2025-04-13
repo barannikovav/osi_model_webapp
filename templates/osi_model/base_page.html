@@ -17,13 +17,24 @@
 
 <body>
     <!-- Header -->
-    <header class="w3-container w3-theme w3-padding" id="myHeader">
+    <header class="w3-container w3-theme w3-padding" style="width=80%" id="myHeader">
         <div class="w3-left">
             <img style="vertical-align: top" src="{% static 'osi_model/internet.png' %}" alt="Проект для изучения сетевой модели OSI" width="32" height="32"/>
             <a style="font-size:20px; text-decoration: none;" href="{% url 'index' %}">&nbsp Проект для изучения сетевой модели OSI</a>
         </div>
+        <div class="w3-right">
+            <a style="font-size:18px; text-decoration: none;" href="{% url 'reviews:index' %}"> Отзывы </a>
+        </div>
+        <!-- {% if user.is_authenticated %}
+            <div class="w3-right">
+                <a style="font-size:18px; text-decoration: none;" href="{% url 'index' %}"> Выйти </a>
+            </div>
+        {% else %}
+            <div class="w3-right">
+                <span>User: {{ user.username }} </span><a style="font-size:18px; text-decoration: none;" href="{% url 'index' %}"> Войти </a>
+            </div>
+        {% endif %} -->
     </header>
-
     <!-- Content -->
     {% block content %}{% endblock %}
 

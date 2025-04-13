@@ -1,0 +1,39 @@
+{% extends "osi_model/base_page.html" %}
+
+{% block content %}
+<header class="w3-container" style="background-color:black;">
+    <h1 style="color: white;">Последние отзывы</h2>
+    <br>
+</header>
+<br>
+<div class="w3-row">
+    <div class="w3-third w3-container">
+    </div>
+    <div class="w3-third w3-container">
+        <div class="w3-center">
+            <a type="button" href="{% url 'reviews:add'%}" class="w3-button" style="width: 100%;font-size:30px;color: white;background-color:black;">Оставить отзыв</a>
+        </div>
+        <br>
+        {% if reviews %}
+            {% for review in reviews %}
+                <div class="w3-container w3-card-4">
+                    <h4>{{ review.name }}</h4>
+                    <p><b>Оценка: </b> {{ review.rating }}/5</p>
+                    <p><b>Дата создания: </b> {{ review.created_at|date:"d.m.Y H:i" }}</p>
+                    <p><b>Текст: </b></p>
+                    <p>{{ review.message }}</p>
+                </div>
+                <br>
+            {% endfor %}
+        {% else %}
+            <div class="w3-container w3-card-4">
+                <h4>Пока нет отзывов. Будьте первыми!</h4>
+                <br>
+            </div>
+        {% endif %}
+    </div>
+    <div class="w3-third w3-container">
+    </div>
+</div>
+<br>
+{% endblock %}

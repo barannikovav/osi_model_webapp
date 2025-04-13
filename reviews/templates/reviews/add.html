@@ -1,0 +1,53 @@
+{% extends "osi_model/base_page.html" %}
+
+{% block content %}
+<header class="w3-container" style="background-color:black;">
+    <h1 style="color: white;">Создание отзыва</h2>
+    <br>
+</header>
+<br>
+<div class="w3-row">
+    <div class="w3-third w3-container">
+    </div>
+    <div class="w3-third w3-container">
+        <br>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="w3-container w3-card-4">
+            <form method="post" class="w3-container">
+                {% csrf_token %}
+                
+                <div class="w3-section">
+                    <input type="text" name="name" class="form-control w3-input" maxlength="100" required id="id_name">
+                    <label for="id_name">Имя</label>
+                </div>
+                
+                <div class="w3-section">
+                    <input type="email" name="email" class="form-control w3-input" maxlength="254" required id="id_email">
+                    <label for="id_email">Email для обратной связи</label>
+                </div>
+                
+                <div class="w3-section">
+                    <input type="number" name="rating" class="form-control w3-input" min="1" max="5" required id="id_rating">
+                    <label for="id_rating">Оценка (от 1 до 5)</label>
+                </div>
+                
+                <div class="w3-section">
+                    <textarea name="message" cols="40" rows="4" class="form-control w3-input" required id="id_message">
+                    </textarea>
+                    <label for="id_message">Текст отзыва</label>
+                <div class="w3-center w3-section">
+                    <button type="submit" class="w3-button w3-theme">Отправить отзыв</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="w3-third w3-container">
+    </div>
+</div>
+<br>
+{% endblock %}

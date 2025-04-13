@@ -18,7 +18,7 @@
 </div>
 <br>
 <div class="w3-center">
-    <li><a type="button" href="{% url 'layers:test' layer.number %}" class="w3-button" style="width: 50%; color: white; font-size:25px;background-color:rgb{{ layer.rgb }};">Пройти тест по теме</a></li>
+    <a type="button" href="{% url 'layers:test' layer.number %}" class="w3-button" style="width: 50%; color: white; font-size:25px;background-color:rgb{{ layer.rgb }};">Пройти тест по теме</a>
 </div>
 
 {% endblock %}
