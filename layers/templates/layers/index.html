@@ -9,7 +9,7 @@
 
     {% for layer in layers %}
     <div class="w3-center">
-        <li><a type="button" href="{% url 'layers:detail' layer.number %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb{{ layer.rgb }};">{{ layer.name }}</a></li>
+        <li><a type="button" href="{% url 'layers:detail' layer.number %}" class="w3-button" style="width: 95%;font-size:30px;color: white;background-color:rgb{{ layer.rgb }};">{{ layer.name }}</a></li>
     </div>
     <br>
     {% endfor %}

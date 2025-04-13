@@ -2,7 +2,9 @@
 
 {% block content %}
 <header class="w3-container" style="background-color:rgb{{ layer.rgb }};">
-    <h1>{{ layer.name }} - тест</h2>
+    <h1 style="color: white;">{{ layer.name }} - тест</h2>
+    <a style="font-size:15px; text-decoration: none; color: white;" href="{% url 'layers:index' %}">&#8592 К списку уровней</a>
+    <br>
 </header>
 
 <br>

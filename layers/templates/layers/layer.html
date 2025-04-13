@@ -2,14 +2,23 @@
 
 {% block content %}
 <header class="w3-container" style="background-color:rgb{{ layer.rgb }};">
-    <h1>{{ layer.name }}</h2>
+    <h1 style="color: white;">{{ layer.name }}</h2>
+    <a style="font-size:15px; text-decoration: none; color: white;" href="{% url 'layers:index' %}">&#8592 К списку уровней</a>
+    <br>
 </header>
-<div class="w3-padding w3-text-theme w3-white w3-display-container">
-    {{ layer.description | safe }}
+<br>
+<div class="w3-row">
+    <div class="w3-third w3-container" style="width: 25%;">
+    </div>
+    <div class="w3-third w3-container w3-card-4" style="width: 50%;font-size:18px;">
+        {{ layer.description | safe }}
+    </div>
+    <div class="w3-third w3-container" style="width: 25%;">
+    </div>
 </div>
-
+<br>
 <div class="w3-center">
-    <li><a type="button" href="{% url 'layers:test' layer.number %}" class="w3-button" style="width: 50%;font-size:25px;background-color:rgb{{ layer.rgb }};">Пройти тест по теме</a></li>
+    <li><a type="button" href="{% url 'layers:test' layer.number %}" class="w3-button" style="width: 50%; color: white; font-size:25px;background-color:rgb{{ layer.rgb }};">Пройти тест по теме</a></li>
 </div>
 
 {% endblock %}

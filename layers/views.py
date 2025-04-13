@@ -21,8 +21,10 @@ def test(request, layer_id):
         
         for question in questions:
             selected_answer = request.POST.get(f'question_{question.id}')
+            correct_answers = question.answer.split('|')
+            correct_answers_lower = [a.lower() for a in correct_answers]
             if selected_answer:
-                is_correct = (selected_answer.strip().lower() ==  question.answer)
+                is_correct = (selected_answer.strip().lower() in correct_answers_lower)
                 if is_correct:
                     score += 1
                     question.num_of_correct = F("num_of_correct") + 1
@@ -31,6 +33,7 @@ def test(request, layer_id):
                 
                 results.append({
                     'selected_answer': selected_answer,
+                    'correct_answer': ', '.join(correct_answers),
                     'question': question,
                     'is_correct': is_correct,
                     'explanation': question.explanation
