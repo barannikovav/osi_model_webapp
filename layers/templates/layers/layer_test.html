@@ -1,0 +1,34 @@
+{% extends "osi_model/base_page.html" %}
+
+{% block content %}
+<header class="w3-container" style="background-color:rgb{{ layer.rgb }};">
+    <h1>{{ layer.name }} - тест</h2>
+</header>
+
+<br>
+<div class="w3-row">
+    <div class="w3-third w3-container">
+    </div>
+    <div class="w3-third w3-container">
+        <form action="{% url 'layers:test' layer.number %}" class="w3-container" method="post">
+            {% csrf_token %}
+            {% for question in questions %}
+                <div class="w3-container w3-card-4">
+                    <h4>{{ question.text }}</h4>
+                    <div class="w3-section">      
+                        <label for="question_{{ question.id }}">Ответ: </label>
+                        <input type="text" name="question_{{ question.id }}" class="w3-input" required>
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+            <div class="w3-center">
+                <button type="submit" class="w3-button w3-theme">Проверить ответы</button>
+            </div>
+        </form>
+    </div>
+    <div class="w3-third w3-container">
+    </div>
+</div>
+<br>
+{% endblock %}

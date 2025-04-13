@@ -6,32 +6,11 @@
         <h1 class="w3-xxxlarge w3-text-theme">Уровни модели OSI</h1>
     </div>
     <hr>
+
+    {% for layer in layers %}
     <div class="w3-center">
-        <li><a type="button" href="{% url 'layers:detail' 1 %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb(135, 114, 198);">Физический уровень</a></li>
+        <li><a type="button" href="{% url 'layers:detail' layer.number %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb{{ layer.rgb }};">{{ layer.name }}</a></li>
     </div>
     <br>
-    <div class="w3-center">
-        <li><a type="button" href="{% url 'layers:detail' 2 %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb(90, 180, 84);">Канальный уровень</a></li>
-    </div>
-    <br>
-    <div class="w3-center">
-        <li><a type="button" href="{% url 'layers:detail' 3 %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb(237, 118, 71);">Сетевой уровень</a></li>
-    </div>
-    <br>
-    <div class="w3-center">
-        <li><a type="button" href="{% url 'layers:detail' 4 %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb(91, 199, 238);">Транспортный уровень</a></li>
-    </div>
-    <br>
-    <div class="w3-center">
-        <li><a type="button" href="{% url 'layers:detail' 5 %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb(246, 211, 71);">Сеансовый уровень</a></li>
-    </div>
-    <br>
-    <div class="w3-center">
-        <li><a type="button" href="{% url 'layers:detail' 6 %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb(170, 123, 189);">Уровень представления</a></li>
-    </div>
-    <br>
-    <div class="w3-center">
-        <li><a type="button" href="{% url 'layers:detail' 7 %}" class="w3-button" style="width: 95%;font-size:30px;background-color:rgb(113, 215, 210);">Прикладной уровень</a></li>
-    </div>
-    <br>
+    {% endfor %}
 {% endblock %}

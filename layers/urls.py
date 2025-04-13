@@ -9,5 +9,5 @@ urlpatterns = [
     # ex: /layers/2/
     path("<int:layer_id>/", views.detail, name="detail"),
     # ex: /layers/2/test/
-    path("<int:question_id>/test/", views.test, name="test"),
+    path("<int:layer_id>/test/", views.test, name="test"),
 ]
