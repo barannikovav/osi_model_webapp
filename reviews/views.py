@@ -19,7 +19,7 @@ def add_review(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Спасибо за ваш отзыв!')
-            return redirect('reviews:index')
+            return redirect('reviews:add')
     else:
         form = FeedbackForm()
 

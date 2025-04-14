@@ -12,9 +12,12 @@
     <div class="w3-third w3-container">
         <br>
         {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-success">{{ message }}</div>
-            {% endfor %}
+            <div class="w3-container w3-card-4">
+                {% for message in messages %}
+                    <div class="w3-section alert alert-success">{{ message }}</div>
+                {% endfor %}
+            </div>
+            <br>
         {% endif %}
 
         <div class="w3-container w3-card-4">
@@ -37,15 +40,22 @@
                 </div>
                 
                 <div class="w3-section">
-                    <textarea name="message" cols="40" rows="4" class="form-control w3-input" required id="id_message">
+                    <textarea name="message" cols="40" rows="4" class="form-control w3-input" required id="id_message" value="">
                     </textarea>
                     <label for="id_message">Текст отзыва</label>
-                <div class="w3-center w3-section">
-                    <button type="submit" class="w3-button w3-theme">Отправить отзыв</button>
+                </div>
+                <div class="w3-section w3-center">
+                    <button type="submit" class="w3-button w3-theme ">Отправить отзыв</button>
                 </div>
             </form>
         </div>
+        <br>
+        <div class="w3-center">
+            <a type="button" href="{% url 'reviews:index'%}" class="w3-button" style="width: 100%;font-size:30px;color: white;background-color:black;">К списку отзывов</a>
+        </div>
+        <br>
     </div>
+        
     <div class="w3-third w3-container">
     </div>
 </div>
