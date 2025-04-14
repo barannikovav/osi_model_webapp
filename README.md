@@ -29,6 +29,9 @@ pip install -r requirements.txt
 
 ### Perform migration of the database
 ```
+python manage.py makemigrations
+```
+```
 python manage.py migrate
 ```
 
@@ -49,4 +52,4 @@ python manage.py runserver --insecure
 ## Check code with pylint
 ### One can run pylint to check code quality:
 ```
-pylint --load-plugins=pylint_django --django-settings-module=osi_model.settings osi_model/*.py layers/*.py
+pylint --load-plugins=pylint_django --django-settings-module=osi_model.settings osi_model/*.py layers/*.py reviews/*.py
